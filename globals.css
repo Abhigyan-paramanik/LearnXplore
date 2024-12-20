@@ -1,0 +1,236 @@
+/* Reset Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+html, body {
+  font-family: 'Papyrus', fantasy, Arial, sans-serif;
+  background-color: #fff;
+  color: #000;
+  width: 100%;
+  height: 100%;
+  line-height: 1.6;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 100vh;
+  padding-top: 60px; /* Adjusted for header spacing */
+}
+
+/* Header & Footer */
+header, footer {
+  background-color: #000;
+  color: #fff;
+  text-align: center;
+  padding: 15px 0;
+  width: 100%;
+}
+
+footer {
+  margin-top: auto; /* Footer always stays at the bottom */
+}
+
+/* Seven Segment Counter */
+#seven-segment-counter {
+  position: fixed;  /* Sticks to the viewport */
+  top: 10px;  /* Minimum distance from the top */
+  right: 10px;  /* Minimum distance from the right */
+  font-size: 0.75rem;  /* Smaller font size */
+  background-color: #000;
+  color: #00ff15;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-family: monospace;
+  text-align: center;
+  letter-spacing: 0.03em;  /* Very small spacing between digits */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  z-index: 999;  /* Always on top */
+  width: auto; /* Adjusts width based on content */
+  height: auto; /* Adjusts height based on content */
+}
+
+/* To ensure digits inside the counter aren't too spread out */
+#seven-segment-counter span {
+  margin: 0 0.1em; /* Tighten up space between digits */
+}
+
+/* Section Content */
+.section {
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  padding: 30px; /* Consistent padding for sections */
+  margin: 20px auto;
+  width: calc(100% - 40px);
+  max-width: 1200px;
+  text-align: center;
+  transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+/* Resource Cards in the Resources Section */
+#resources .grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Two cards in a row */
+  gap: 30px; /* Reduced the gap */
+  justify-items: center;
+}
+
+#resources .bg-white {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+  width: 100%;
+}
+
+#resources .bg-white:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+#resources .bg-white .text-xl {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+  font-weight: 700;
+}
+
+#resources .bg-white .text-gray-600 {
+  font-size: 1rem;
+  color: #4A4A4A;
+  margin-bottom: 15px;
+}
+
+#resources a {
+  display: inline-block;
+  background-color: #333;
+  color: #fff;
+  padding: 10px 15px;
+  border-radius: 5px;
+  text-decoration: none;
+  text-align: center;
+}
+
+#resources a:hover {
+  background-color: #555;
+}
+
+/* Buttons */
+button {
+  display: block;
+  width: 90%;
+  max-width: 300px;
+  margin: 10px auto;
+  padding: 12px 20px;
+  background-color: #000;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  font-family: 'Papyrus', fantasy, Arial, sans-serif;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+button:hover {
+  background-color: #333;
+  transform: translateY(-2px);
+}
+
+button:active {
+  background-color: #555;
+  transform: scale(0.98);
+}
+
+button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Typography */
+h1, h2, h3 {
+  font-weight: 700;
+  margin: 10px 0;
+}
+
+p {
+  margin: 10px 0 15px;
+}
+
+/* Utility Flex Classes */
+.flex-column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.mt-10 { margin-top: 2.5rem; }
+.mb-10 { margin-bottom: 2.5rem; }
+
+/* Dark Mode Styles */
+body.dark {
+  background-color: #121212;
+  color: #e0e0e0;
+}
+
+body.dark header, body.dark footer {
+  background-color: #222;
+  color: #e0e0e0;
+}
+
+body.dark button {
+  background-color: #444;
+  color: #e0e0e0;
+}
+
+body.dark button:hover {
+  background-color: #555;
+}
+
+body.dark .section {
+  background-color: #222;
+  box-shadow: 0 2px 5px rgba(255, 255, 255, 0.1);
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #333;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Responsive Improvements */
+@media (max-width: 600px) {
+  .section {
+    width: calc(100% - 20px);
+  }
+
+  button {
+    width: calc(100% - 40px);
+  }
+
+  #resources .grid {
+    grid-template-columns: 1fr; /* Stack cards on smaller screens */
+  }
+}
